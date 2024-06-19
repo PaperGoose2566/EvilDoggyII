@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.zooteam.evildoggyii.ui.theme.EvilDoggyIITheme
 
 class MainActivity : ComponentActivity() {
+    var game = Game()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -28,14 +29,13 @@ class MainActivity : ComponentActivity() {
                     // Navigation Controller
                     val navController = rememberNavController()
                     // Navigation Graph defines the possible routes
-                    NavHost(navController = navController, startDestination = Routes.One) {
+                    NavHost(navController = navController, startDestination = Routes.MainMenu) {
                         // First route is defined with its name stored in Routes
-                        composable(Routes.One) {
-                            // TestA is called when the first route is taken
-                            TestA(navController)
+                        composable(Routes.MainMenu) {
+                           MainMenu(navController)
                         }
-                        composable(Routes.Two) {
-                           TestB(navController)
+                        composable(Routes.RoleAssignment) {
+                            RoleAssignmentScreen(navController, game)
                         }
                     }
                 }
