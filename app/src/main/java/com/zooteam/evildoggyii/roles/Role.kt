@@ -7,4 +7,5 @@ import androidx.compose.ui.res.painterResource
 
 abstract class Role {
     abstract var name: String
+    abstract var cardidx: Int
 }

@@ -4,4 +4,5 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 
 class Mayor(override var name: String = "Bürgermeister") : Role() {
+    override var cardidx: Int = 5
 }

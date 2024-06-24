@@ -5,4 +5,5 @@ import android.graphics.BitmapFactory
 import com.zooteam.evildoggyii.roles.Role
 
 class Werewolf(override var name: String = "Werwolf") : Role() {
+    override var cardidx: Int = 4
 }

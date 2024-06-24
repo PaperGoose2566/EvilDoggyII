@@ -4,4 +4,5 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 
 class Villager(override var name: String = "Dorfbewohner") : Role() {
+    override var cardidx: Int = 2
 }

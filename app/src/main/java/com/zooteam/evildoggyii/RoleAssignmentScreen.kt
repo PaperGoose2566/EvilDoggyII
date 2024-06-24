@@ -21,6 +21,7 @@ import androidx.navigation.NavHostController
 @Composable
 fun RoleAssignmentScreen(navController: NavHostController, game: Game) {
     var x by remember { mutableIntStateOf(0)}
+    var cardtable = CardTable
     var ctx = LocalContext.current
     game.setContent(ctx)
     Column() {
@@ -30,6 +31,10 @@ fun RoleAssignmentScreen(navController: NavHostController, game: Game) {
             .width(200.dp)) {
 
         }
+        Image(painter = cardtable.getCard(idx = game.gameRoles[x].cardidx),
+            contentDescription = game.gameRoles[x].name,
+            modifier = Modifier
+                .size(500.dp))
         Text(text = "${game.getPlayerCount()}")
         Text(text = "${game.gameRoles.size}")
     }

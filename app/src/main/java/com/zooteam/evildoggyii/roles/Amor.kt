@@ -14,4 +14,5 @@ import com.zooteam.evildoggyii.R
 
 
 class Amor(override var name: String = "Amor") : Role() {
+    override var cardidx: Int = 0
 }
