@@ -1,4 +1,9 @@
 package com.zooteam.evildoggyii.roles
 
-class Witch(override var name: String = "Hexe") : Role {
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import com.zooteam.evildoggyii.Game
+import com.zooteam.evildoggyii.R
+
+class Witch(override var name: String = "Hexe") : Role() {
 }

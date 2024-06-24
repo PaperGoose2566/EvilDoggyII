@@ -1,4 +1,7 @@
 package com.zooteam.evildoggyii.roles
 
-class Hunter(override var name: String = "Jäger") : Role {
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+
+class Hunter(override var name: String = "Jäger") : Role() {
 }

@@ -1,12 +1,15 @@
 package com.zooteam.evildoggyii
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -31,8 +34,14 @@ class MainActivity : ComponentActivity() {
                         composable(Routes.MainMenu) {
                            MainMenu(navController)
                         }
+                        composable(Routes.GameOptions) {
+                            GameOptions(navController, game = game)
+                        }
                         composable(Routes.RoleAssignment) {
                             RoleAssignmentScreen(navController, game)
+                            BackHandler(true) {
+                               // blocks the back button from breaking everything
+                            }
                         }
                     }
                 }

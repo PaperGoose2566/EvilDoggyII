@@ -1,4 +1,7 @@
 package com.zooteam.evildoggyii.roles
 
-class Mayor(override var name: String = "Bürgermeister") : Role {
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+
+class Mayor(override var name: String = "Bürgermeister") : Role() {
 }

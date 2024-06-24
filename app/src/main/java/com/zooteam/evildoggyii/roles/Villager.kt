@@ -1,4 +1,7 @@
 package com.zooteam.evildoggyii.roles
 
-class Villager(override var name: String = "Dorfbewohner") : Role {
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+
+class Villager(override var name: String = "Dorfbewohner") : Role() {
 }

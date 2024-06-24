@@ -26,7 +26,7 @@ fun MainMenu(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = "Werewolf - Among Us but with a dog", fontSize = 20.sp)
-        Button(onClick = { navController.navigate(Routes.RoleAssignment) },
+        Button(onClick = { navController.navigate(Routes.GameOptions) },
                modifier = Modifier.padding(50.dp).width(300.dp).height(100.dp)) {
             Text(text = "Click to Start!", fontSize = 30.sp )
         }

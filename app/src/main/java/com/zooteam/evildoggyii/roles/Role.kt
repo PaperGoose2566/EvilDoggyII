@@ -1,5 +1,10 @@
 package com.zooteam.evildoggyii.roles
 
-interface Role {
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
+
+abstract class Role {
     abstract var name: String
 }
