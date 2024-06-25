@@ -3,7 +3,6 @@ package com.zooteam.evildoggyii
 import android.content.Context
 import com.zooteam.evildoggyii.roles.Amor
 import com.zooteam.evildoggyii.roles.Hunter
-import com.zooteam.evildoggyii.roles.Mayor
 import com.zooteam.evildoggyii.roles.Role
 import com.zooteam.evildoggyii.roles.Seher
 import com.zooteam.evildoggyii.roles.Villager
@@ -11,13 +10,20 @@ import com.zooteam.evildoggyii.roles.Werewolf
 import com.zooteam.evildoggyii.roles.Witch
 
 class Game() {
-    lateinit var ctx: Context
+    // List of active Roles
     var gameRoles: MutableList<Role>
-    private var playerCount: Int = 0
-    private var werewolfCount: Int = 2
+    // List of current Players
+    var playerList: MutableList<Player>
+
+    var playerCount: Int = 0
+    var werewolfCount: Int = 2
+
+    // Dumbest fix to a bug ever
+    var count = -1
 
     init {
-        gameRoles = mutableListOf<Role>(Seher(), Amor(), Mayor(), Witch(), Hunter())
+        gameRoles = mutableListOf<Role>(Seher(), Amor(), Witch(), Hunter())
+        playerList = mutableListOf<Player>()
     }
 
     fun fillList() {
@@ -30,17 +36,6 @@ class Game() {
         gameRoles = gameRoles.shuffled().toMutableList()
     }
 
-    fun setPlayerCount(x: Int) {
-       playerCount = x
-    }
-    fun setWerewolfCount(x: Int){
-        werewolfCount = x
-    }
-
-    fun getPlayerCount(): Int {
-       return playerCount
-    }
-
     fun fillRoleList() {
 
     }
@@ -48,9 +43,5 @@ class Game() {
     fun randomRoles() {
         // Randomises the roles
         gameRoles = gameRoles.shuffled().toMutableList()
-    }
-
-    fun setContent(ctx: Context) {
-       this.ctx = ctx
     }
 }

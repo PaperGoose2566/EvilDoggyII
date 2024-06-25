@@ -7,5 +7,6 @@ package com.zooteam.evildoggyii
 object Routes {
     var MainMenu = "MainMenu"
     var GameOptions = "GameOptions"
+    var NameEntry = "NameEntry"
     var RoleAssignment = "RoleAssignment"
 }

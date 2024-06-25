@@ -4,6 +4,6 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import com.zooteam.evildoggyii.roles.Role
 
-class Seher(override var name: String = "Seher") : Role() {
+class Seher(override var name: String = "Seer") : Role() {
     override var cardidx: Int = 1
 }

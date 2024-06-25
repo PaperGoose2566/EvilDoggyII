@@ -6,6 +6,6 @@ import androidx.compose.runtime.Composable
 import com.zooteam.evildoggyii.Game
 import com.zooteam.evildoggyii.R
 
-class Witch(override var name: String = "Hexe") : Role() {
-    override var cardidx: Int = 6
+class Witch(override var name: String = "Witch") : Role() {
+    override var cardidx: Int = 5
 }
