@@ -7,6 +7,15 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.zooteam.evildoggyii.uiscreens.GameOptions
+import com.zooteam.evildoggyii.uiscreens.MainMenu
+import com.zooteam.evildoggyii.uiscreens.night.NightFall
+import com.zooteam.evildoggyii.uiscreens.night.SeerNight
+import com.zooteam.evildoggyii.uiscreens.night.SeerReveal
+import com.zooteam.evildoggyii.uiscreens.night.Transition
+import com.zooteam.evildoggyii.uiscreens.night.WerewolfNight
+import com.zooteam.evildoggyii.uiscreens.roleassign.NameEntry
+import com.zooteam.evildoggyii.uiscreens.roleassign.RoleAssignmentScreen
 
 @Composable
 fun TheNavigator(game : Game) {
@@ -40,6 +49,21 @@ fun TheNavigator(game : Game) {
             BackHandler(true) {
                 // blocks the back button from breaking everything
             }
+        }
+        composable(Routes.NightFall) {
+            NightFall(navController = navController, game = game)
+        }
+        composable(Routes.Werewolf) {
+            WerewolfNight(navController, game)
+        }
+        composable(Routes.Trans) {
+            Transition(navController = navController, game = game)
+        }
+        composable(Routes.Seer) {
+            SeerNight(navController, game)
+        }
+        composable(Routes.SeerReveal) {
+            SeerReveal(navController, game)
         }
     }
 }

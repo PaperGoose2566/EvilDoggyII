@@ -1,4 +1,4 @@
-package com.zooteam.evildoggyii
+package com.zooteam.evildoggyii.uiscreens.roleassign
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
@@ -14,6 +14,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.zooteam.evildoggyii.Game
+import com.zooteam.evildoggyii.Routes
 
 @Composable
 fun NameEntry(navController: NavHostController, game: Game) {
@@ -33,10 +35,10 @@ fun NameEntry(navController: NavHostController, game: Game) {
         Button(onClick = {
             game.count++
             if(pname != "") {
-                navController.navigate(Routes.RoleAssignment+"/${pname}")
+                navController.navigate(Routes.RoleAssignment +"/${pname}")
             } else
                 // Fallback if the name string is empty to prevent crash
-                navController.navigate(Routes.RoleAssignment+"/IDIOT FORGOR THEIR NAME LMAO!!!!")
+                navController.navigate(Routes.RoleAssignment +"/NO NAME")
                          }, modifier = Modifier
             .height(100.dp)
             .width(200.dp)) {

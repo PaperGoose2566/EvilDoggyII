@@ -1,4 +1,4 @@
-package com.zooteam.evildoggyii
+package com.zooteam.evildoggyii.uiscreens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
@@ -10,21 +10,22 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.min
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.zooteam.evildoggyii.Game
+import com.zooteam.evildoggyii.Routes
 
 @Composable
 fun GameOptions(navController: NavHostController, game: Game) {
-   var minPlayers = 7f
-   var maxPlayers = 16f
-   var minWolf = 1f
-   var maxWolf = 8f
+   val minPlayers = 7f
+   val maxPlayers = 16f
+   val minWolf = 1f
+   val maxWolf = 8f
+
    var playerSliderPosition by remember { mutableFloatStateOf(minPlayers)}
    var wolfSliderPosition by remember { mutableFloatStateOf(2f)}
    Column {
@@ -40,10 +41,12 @@ fun GameOptions(navController: NavHostController, game: Game) {
       Text(text = if(wolfSliderPosition<=2) {"Werewolf Count: ${wolfSliderPosition.toInt()}"} else {"Werewolf Count: ${wolfSliderPosition.toInt()}  (WARNING: THIS IS A HIGH NUMBER AND IS ALSO STUPID)"})
       Slider(value = wolfSliderPosition,
          onValueChange = { wolfSliderPosition = it },
-         steps = ((maxWolf - minWolf) - 1).toInt(),
+         steps = ((maxWolf - minWolf).toInt() -1),
          valueRange = minWolf..maxWolf,
       )
-      Button(onClick = { game.playerCount=playerSliderPosition.toInt(); game.fillList(); navController.navigate(Routes.NameEntry) },
+      Button(onClick = { game.playerCount=playerSliderPosition.toInt(); game.fillList(); navController.navigate(
+          Routes.NameEntry
+      ) },
          modifier = Modifier
             .padding(50.dp)
             .width(300.dp)

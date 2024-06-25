@@ -1,4 +1,4 @@
-package com.zooteam.evildoggyii
+package com.zooteam.evildoggyii.uiscreens.roleassign
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -8,16 +8,14 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import androidx.navigation.ui.AppBarConfiguration
-import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
+import com.zooteam.evildoggyii.CardTable
+import com.zooteam.evildoggyii.Game
+import com.zooteam.evildoggyii.Player
+import com.zooteam.evildoggyii.Routes
+import com.zooteam.evildoggyii.Semantics
 import com.zooteam.evildoggyii.roles.Role
 
 @Composable
@@ -30,21 +28,21 @@ fun RoleAssignmentScreen(navController: NavHostController, game: Game, name: Str
             else "$name, you are a ${game.gameRoles[x].name}"
         )
 
-        Image(painter = cardtable.getCard(idx = game.gameRoles[x].cardidx),
+        Image(painter = CardTable.getCard(idx = game.gameRoles[x].cardidx),
             contentDescription = game.gameRoles[x].name,
             modifier = Modifier
                 .size(500.dp))
-        Text(text = "${game.playerCount}")
-        Text(text = "$x")
 
         Button(onClick = {
             if(x<game.gameRoles.size-1) {
                 navController.navigate(Routes.NameEntry)
-            }}, modifier = Modifier
+            } else navController.navigate(Routes.NightFall)
+            game.playerList.add(addPlayer(game.gameRoles[x], name))
+            }, modifier = Modifier
             .height(100.dp)
-            .width(200.dp)) {}
+            .width(200.dp),
+        ) {}
     }
-    game.playerList.add(addPlayer(game.gameRoles[x], name))
 }
 fun addPlayer(role: Role, name: String): Player {
    return Player(name, role)

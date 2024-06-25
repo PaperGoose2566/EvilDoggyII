@@ -12,6 +12,8 @@ object CardTable {
             1 -> return painterResource(id = R.drawable.seher)
             2 -> return painterResource(id = R.drawable.bueger)
             3 -> return painterResource(id = R.drawable.jeager)
+            4 -> return painterResource(id = R.drawable.wolf)
+            5 -> return painterResource(id = R.drawable.witch)
             else -> return painterResource(id = R.drawable.placeholdercard)
         }
     }

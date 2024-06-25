@@ -18,7 +18,10 @@ class Game() {
     var playerCount: Int = 0
     var werewolfCount: Int = 2
 
-    // Dumbest fix to a bug ever
+    // Temporary solution so I don't kill myself
+    var dumb = 0
+
+    // Cycles through lists, useful for not resetting position after screen changes
     var count = -1
 
     init {
@@ -36,12 +39,7 @@ class Game() {
         gameRoles = gameRoles.shuffled().toMutableList()
     }
 
-    fun fillRoleList() {
-
-    }
-
-    fun randomRoles() {
-        // Randomises the roles
-        gameRoles = gameRoles.shuffled().toMutableList()
+    fun nightInit() {
+       count = 0
     }
 }
