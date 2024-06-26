@@ -20,7 +20,7 @@ fun NightFall(navController: NavHostController, game: Game) {
            when(game.playerList[0].role) {
                is Werewolf -> navController.navigate(Routes.Werewolf)
                is Seher -> navController.navigate(Routes.Seer)
-               else -> navController.navigate(Routes.Trans)
+               else -> {game.count++; navController.navigate(Routes.Villager)}
            }
        }) {
        }

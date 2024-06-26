@@ -1,5 +1,6 @@
 package com.zooteam.evildoggyii
 
+import com.zooteam.evildoggyii.roles.Villager
 import com.zooteam.evildoggyii.roles.Werewolf
 
 /*
@@ -16,4 +17,6 @@ object Routes {
     var Werewolf = "Werewolf"
     var Seer = "Seer"
     var SeerReveal = "SeerReveal"
+    var Villager = "Villager"
+    var Dead = "Dead"
 }

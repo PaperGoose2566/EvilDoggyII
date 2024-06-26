@@ -31,10 +31,9 @@ fun SeerReveal(navController: NavHostController, game: Game) {
          contentDescription = game.gameRoles[sol].name,
          modifier = Modifier
             .size(500.dp))
-      Button(onClick = {navController.navigate(Routes.Trans); var seher = game.playerList[game.count].role as Seher; seher.usedAbility = true}, modifier = Modifier
+      Button(onClick = {var seher = game.playerList[game.count].role as Seher; game.count++; seher.usedAbility = true; navController.navigate(Routes.Trans)}, modifier = Modifier
          .width(50.dp)
          .height(20.dp)) {
-
       }
    }
 }

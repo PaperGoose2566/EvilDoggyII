@@ -9,10 +9,12 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.zooteam.evildoggyii.uiscreens.GameOptions
 import com.zooteam.evildoggyii.uiscreens.MainMenu
+import com.zooteam.evildoggyii.uiscreens.night.DeadNight
 import com.zooteam.evildoggyii.uiscreens.night.NightFall
 import com.zooteam.evildoggyii.uiscreens.night.SeerNight
 import com.zooteam.evildoggyii.uiscreens.night.SeerReveal
 import com.zooteam.evildoggyii.uiscreens.night.Transition
+import com.zooteam.evildoggyii.uiscreens.night.VillagerNight
 import com.zooteam.evildoggyii.uiscreens.night.WerewolfNight
 import com.zooteam.evildoggyii.uiscreens.roleassign.NameEntry
 import com.zooteam.evildoggyii.uiscreens.roleassign.RoleAssignmentScreen
@@ -64,6 +66,12 @@ fun TheNavigator(game : Game) {
         }
         composable(Routes.SeerReveal) {
             SeerReveal(navController, game)
+        }
+        composable(Routes.Villager) {
+            VillagerNight(navController = navController, game = game)
+        }
+        composable(Routes.Dead) {
+            DeadNight(navController = navController, game = game)
         }
     }
 }

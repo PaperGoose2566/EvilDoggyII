@@ -38,7 +38,7 @@ fun WerewolfNight(navController: NavHostController, game: Game) {
             }
         }
         Text(text = if(selectedPlayer == -1) "" else "Selected: ${game.playerList[selectedPlayer].name}")
-        Button(onClick = {game.playerList[selectedPlayer].voteCount++; navController.navigate(Routes.Trans)}) {
+        Button(onClick = {game.count++; game.playerList[selectedPlayer].voteCount++; navController.navigate(Routes.Trans)}) {
             Text(text = "Confirm Vote")
         }
     }
